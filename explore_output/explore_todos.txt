@@ -1,0 +1,24 @@
+Start of tests: 
+Testing GET /todos
+Status: 200
+Response: {"todos":[{"id":"40","title":"Test todo","doneStatus":"false","description":"Test description"},{"id":"34","title":"Test todo","doneStatus":"false","description":"Test description"},{"id":"2","title":"file paperwork","doneStatus":"false","description":"","tasksof":[{"id":"1"}]},{"id":"11","title":"Test todo","doneStatus":"false","description":"Test description"},{"id":"37","title":"Test todo","doneStatus":"false","description":"Test description"},{"id":"25","title":"Test todo","doneStatus":"false","description":"Test description"},{"id":"23","title":"Test todo","doneStatus":"false","description":"Test description"},{"id":"28","title":"Test todo","doneStatus":"false","description":"Test description"},{"id":"1","title":"scan paperwork","doneStatus":"false","description":"","tasksof":[{"id":"1"}],"categories":[{"id":"1"}]},{"id":"43","title":"Test todo","doneStatus":"false","description":"Test description"},{"id":"46","title":"Test todo","doneStatus":"false","description":"Test description"},{"id":"9","title":"Test todo","doneStatus":"false","description":"Test description"},{"id":"31","title":"Test todo","doneStatus":"false","description":"Test description"}]}
+
+Testing HEAD /todos
+Status: 404
+Headers: {'Date': 'Thu, 20 Feb 2025 03:15:24 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Server': 'Jetty(9.4.z-SNAPSHOT)'}
+
+Head without id Status: 200
+Headers: {'Date': 'Thu, 20 Feb 2025 03:15:24 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Server': 'Jetty(9.4.z-SNAPSHOT)'}
+
+Testing POST /todos
+POST new todo - Status: 201
+Response: {"id":"49","title":"Test todo","doneStatus":"false","description":"Test description"}
+
+POST without title - Status: 400
+Response: {"errorMessages":["title : field is mandatory"]}
+
+POST new todo with done status as string - Status: 400
+Response: {"errorMessages":["Failed Validation: doneStatus should be BOOLEAN"]}
+
+Tests completed
+Results saved to ./explore_output/explore_todos.txt
